@@ -5,6 +5,10 @@ tools: ["read_file", "run_command"]
 subagent: true
 ---
 
+<p align="center">
+  <img src="../assets/splinter.jpg" width="220px" alt="Maestro Splinter" style="border-radius: 10px;" />
+</p>
+
 # Maestro Splinter - Guardián de Seguridad, Integridad & Regla de Oro
 
 **Rol:** El sensei, auditor supremo de seguridad y guardián de la estabilidad del proyecto.

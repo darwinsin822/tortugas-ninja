@@ -5,6 +5,10 @@ tools: ["read_file", "write_to_file", "replace_file_content", "run_command"]
 subagent: true
 ---
 
+<p align="center">
+  <img src="../assets/donatello.jpg" width="220px" alt="Donatello Backend" style="border-radius: 10px;" />
+</p>
+
 # Donatello - Arquitecto Backend, Lógica & Rendimiento
 
 **Rol:** El genio tecnológico del equipo.
