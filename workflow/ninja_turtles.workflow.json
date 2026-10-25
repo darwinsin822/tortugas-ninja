@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Clan Tortugas Ninja & Maestro Splinter Workflow",
+    "animation": "trace",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "full-flow",
+        "label": "Flujo Completo de Desarrollo",
+        "focus": ["user", "audit", "frontend", "playlist", "core", "sync", "qa", "polish", "release"],
+        "note": "Ciclo completo desde la auditoría de Splinter hasta la entrega del APK."
+      },
+      {
+        "id": "audio-core",
+        "label": "Core Audio & DSP (Donatello)",
+        "focus": ["audit", "core", "sync", "qa"],
+        "note": "Estabilidad de reproducción y SoundBooster."
+      },
+      {
+        "id": "ui-polish",
+        "label": "UI/UX & Polish (Leonardo & Michelangelo)",
+        "focus": ["frontend", "playlist", "polish", "release"],
+        "note": "Liquid Glass dopamínico y micro-interacciones."
+      }
+    ]
+  },
+  "lanes": [
+    { "id": "splinter", "label": "🛡️ Maestro Splinter (Seguridad)", "variant": "exception" },
+    { "id": "leo", "label": "🥋 Leonardo (Frontend UI/UX)" },
+    { "id": "don", "label": "💻 Donatello (Backend & DSP Core)" },
+    { "id": "squad", "label": "🥊 Raphael & 🍕 Michelangelo (QA & Polish)" }
+  ],
+  "phases": [
+    { "id": "intake", "label": "Auditoría Previa", "fromCol": 0, "toCol": 1 },
+    { "id": "impl", "label": "Desarrollo Especializado", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "verify", "label": "Validación & Release", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "splinter_gate", "label": "Regla de Oro", "lane": "splinter", "fromCol": 0, "toCol": 1, "variant": "security" },
+    { "id": "ui_group", "label": "Liquid Glass UI", "lane": "leo", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "dsp_group", "label": "Audio Engine", "lane": "don", "fromCol": 2, "toCol": 3, "variant": "default" },
+    { "id": "qa_group", "label": "QA & Polish", "lane": "squad", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "mainPath": ["user", "audit", "core", "sync", "qa", "polish", "release"],
+  "nodes": [
+    { "id": "user", "lane": "splinter", "col": 0, "type": "external", "label": "Usuario", "sublabel": "Solicitud / Idea", "width": 136 },
+    { "id": "audit", "lane": "splinter", "col": 1, "type": "security", "label": "Splinter Audit", "sublabel": "Zero Regressions", "tag": "Regla de Oro", "width": 140 },
+    { "id": "frontend", "lane": "leo", "col": 2, "type": "frontend", "label": "Liquid Glass UI", "sublabel": "Paleta dopamínica", "width": 140 },
+    { "id": "playlist", "lane": "leo", "col": 3, "type": "frontend", "label": "Menú 3 Puntos", "sublabel": "Add to Playlist", "tag": "Ergonomía", "width": 140 },
+    { "id": "core", "lane": "don", "col": 2, "type": "backend", "label": "SoundBooster DSP", "sublabel": "+6dB Sin Clip", "tag": "DSP Core", "width": 140 },
+    { "id": "sync", "lane": "don", "col": 3, "type": "backend", "label": "SampleRate Sync", "sublabel": "Anti-Pitch Warp", "width": 140 },
+    { "id": "qa", "lane": "squad", "col": 4, "type": "messagebus", "label": "Raphael QA", "sublabel": "Stress & Edge-cases", "tag": "Cero bugs", "width": 140 },
+    { "id": "polish", "lane": "squad", "col": 5, "type": "frontend", "label": "Michelangelo", "sublabel": "Háptica & Micro-anim", "width": 140 },
+    { "id": "release", "lane": "splinter", "col": 5, "type": "security", "label": "Splinter Final", "sublabel": "APK Aprobado", "tag": "Release v020", "width": 140 }
+  ],
+  "edges": [
+    { "id": "req-audit", "from": "user", "to": "audit", "variant": "default" },
+    { "id": "audit-leo", "from": "audit", "to": "frontend", "label": "UI task", "variant": "emphasis" },
+    { "id": "audit-don", "from": "audit", "to": "core", "label": "DSP task", "variant": "emphasis" },
+    { "id": "leo-playlist", "from": "frontend", "to": "playlist", "variant": "default" },
+    { "id": "don-sync", "from": "core", "to": "sync", "variant": "default" },
+    { "id": "playlist-qa", "from": "playlist", "to": "qa", "variant": "dashed" },
+    { "id": "sync-qa", "from": "sync", "to": "qa", "variant": "emphasis" },
+    { "id": "qa-polish", "from": "qa", "to": "polish", "label": "aprobado", "variant": "default" },
+    { "id": "polish-release", "from": "polish", "to": "release", "variant": "security" }
+  ]
+}
