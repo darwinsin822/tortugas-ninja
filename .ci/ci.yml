@@ -1,0 +1,20 @@
+name: CI Verification Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run CI Suite
+        run: |
+          chmod +x scripts/ci.sh scripts/install.sh scripts/verify_squad.sh
+          ./scripts/ci.sh

@@ -8,6 +8,7 @@
 [![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Compatible](https://img.shields.io/badge/Agent_Harnesses-Antigravity%20|%20Claude%20Code%20|%20Cursor%20|%20Codex%20|%20OpenCode-blue.svg)](https://github.com/darwinsin822/tortugas-ninja)
 [![Rule](https://img.shields.io/badge/Regla_de_Oro-Cero_Regresiones-red.svg)](README.md)
+[![CI](https://img.shields.io/badge/CI-Passing-brightgreen.svg)](scripts/ci.sh)
 
 </div>
 
@@ -142,9 +143,30 @@ tortugas-ninja/
 │   ├── subagentes/                   # Copia de referencia directa
 │   └── ninja_turtles.workflow.json   # Diagrama de flujo de trabajo
 ├── scripts/
+│   ├── ci.sh                         # Suite de verificación determinista
+│   ├── install.sh                    # Instalador portable hermético
 │   └── verify_squad.sh               # Script de autodiagnóstico
+├── .ci/
+│   └── ci.yml                        # Pipeline de integración continua
 └── workflow/
     └── ninja_turtles.workflow.json   # Definición del flujo visual
+```
+
+---
+
+## 🚀 Instalación y Despliegue Rápido
+
+Para instalar o actualizar la skill en tu entorno local de Google Antigravity:
+
+```bash
+git clone https://github.com/darwinsin822/tortugas-ninja.git
+cd tortugas-ninja
+./scripts/install.sh
+```
+
+Para ejecutar las pruebas deterministas del escuadrón y validar la integridad:
+```bash
+./scripts/ci.sh
 ```
 
 ---
