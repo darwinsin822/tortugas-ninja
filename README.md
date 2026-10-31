@@ -77,8 +77,8 @@ Instalación global con el gestor abierto de skills de Vercel Labs:
 npx skills add darwinsin822/tortugas-ninja -g
 ```
 
-### Opción 2: Instalación nativa como Plugin en Google Antigravity CLI
-Si usas `agy` (Google Antigravity CLI):
+### Opción 2: Instalación nativa como Plugin en Google Antigravity 2.0 CLI
+Si usas `agy` (Google Antigravity 2.0 CLI):
 
 ```bash
 agy plugin install https://github.com/darwinsin822/tortugas-ninja
@@ -86,7 +86,7 @@ agy plugin install https://github.com/darwinsin822/tortugas-ninja
 
 ### Opción 3: Instalación manual en tu sistema o proyecto
 
-#### Global para Antigravity / Gemini CLI:
+#### Global para Antigravity 2.0 / Gemini CLI:
 ```bash
 # Clonar el repositorio
 git clone https://github.com/darwinsin822/tortugas-ninja.git /tmp/tortugas-ninja
@@ -156,7 +156,7 @@ tortugas-ninja/
 
 ## 🚀 Instalación y Despliegue Rápido
 
-Para instalar o actualizar la skill en tu entorno local de Google Antigravity:
+Para instalar o actualizar la skill en tu entorno local de Google Antigravity 2.0:
 
 ```bash
 git clone https://github.com/darwinsin822/tortugas-ninja.git
