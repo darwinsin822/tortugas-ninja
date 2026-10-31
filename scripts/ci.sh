@@ -27,10 +27,10 @@ fi
 rm -rf "$TMP_HOME"
 
 echo "🧪 [3/4] Ejecutando diagnóstico del escuadrón y Regla de Oro..."
-bash "$REPO_DIR/scripts/verify_squad.sh"
+(cd "$REPO_DIR" && bash scripts/verify_squad.sh)
 
 echo "🧪 [4/4] Verificando ausencia total de rutas privadas..."
-if git -C "$REPO_DIR" grep -I -i "/home/darwinsin" ":(exclude).git" 2>/dev/null; then
+if git -C "$REPO_DIR" grep -I -i "/home/darwinsin" ":(exclude).git" ":(exclude)scripts/ci.sh" 2>/dev/null; then
   echo "  ❌ [FAIL] Se detectaron rutas privadas absolutas."
   exit 1
 else
